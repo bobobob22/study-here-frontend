@@ -1,5 +1,9 @@
 import * as WebBrowser from "expo-web-browser";
 import React from "react";
+import { Button } from "react-native-elements";
+import { useNavigation } from "react-navigation-hooks";
+import { Formik } from "formik";
+import * as yup from "yup";
 import {
   Image,
   StyleSheet,
@@ -8,17 +12,9 @@ import {
   View,
   ScrollView
 } from "react-native";
-
-//eslint-disable-next-line
+import { FormItem, Input } from "../components";
 import logo from "../assets/images/icon.png";
 
-import { Button } from "react-native-elements";
-import { useNavigation } from "react-navigation-hooks";
-
-import { Formik } from "formik";
-import * as yup from "yup";
-
-import { FormItem, Input } from "../components";
 
 const schema = yup.object({
   name: yup.string().required("Imię i nazwisko jest wymagane"),
